@@ -1,0 +1,38 @@
+---
+# Feel free to add content and custom Front Matter to this file.
+# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+
+layout: home
+author-image: "assets/img/author.jpg"
+---
+
+<div style="background-color:wthite;color:black;padding:20px;height:45vh;display:table-cell;vertical-align:middle;" >
+  <p>Родился 14 октября 1958 г. в г. Можайск Московской
+  области. Школа, армия, институт. Образование — архитектор
+  (архитектурный факультет МииЗ). Член МОО ВТОО «Союз художников
+  России». Участник разных выставок, конкурсов.</p>
+  <p> Детство выпало на 60-е годы. Музыка, одежда, автомобили, книжная
+  графика того времени имеют свое непотворимое лицо.</p>
+  <p> Такие мастера как Леонид Сойфертис, Анатолий Кокорин,
+  Кукрыниксы, Генрих Вальк, Иван Семенов, американская династия
+  Уайтов, великий датчанин Херлуф Биструп, непревзойденные советские
+  мультфильмы. Всё это, вместе взятое, повлияло на меня, как на художника.</p>
+  <p> Часто хочется в то время. Там было хорошо...</p>
+</div>
+
+<div style="background-color:black;color:white;padding:20px;height:45vh;display:table-cell;vertical-align:middle;">
+  <p style="background-color:black;color:white;"> Prusakov Sergey
+  Alekseevich was born on 14 October, 1958, in Mozhaisk, Moscow
+  Region. School. Army. Institute. His education is an architect
+  (faculty of architecture of Moscow State University of Land
+  Management). Member Of The Union Of Artists Of Russia. Participant
+  of exhibitions.</p>
+  <p style="background-color:black;color:white;"> Childhood fell on
+  the 60s. Music, fashion, cars, cinema, book graphics of that time
+  have their own unique face.</p>
+  <p style="background-color:black;color:white;"> Such masters of the
+  drawing as Leonid Soyfertis, Anatoliy Kokorin, Kukryniksy, Heinrich
+  Valk, Ivan Semenov, White American dynasty, great Herluf Bidstrup,
+  unsurpassed Soviet cartoons - all this together influenced me.</p>
+  <p> Often want to at that time. I was nice there...</p>
+</div>

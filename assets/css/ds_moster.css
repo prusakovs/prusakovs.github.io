@@ -1,0 +1,9 @@
+@font-face {
+	font-family: 'DS Moster';
+	src: url('../fonts/ds_moster.eot'); /* IE 9 Compatibility Mode */
+	src: url('../fonts/ds_moster.eot?#iefix') format('embedded-opentype'), /* IE < 9 */
+		url('../fonts/ds_moster.woff2') format('woff2'), /* Super Modern Browsers */
+		url('../fonts/ds_moster.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
+		url('../fonts/ds_moster.ttf') format('truetype'), /* Safari, Android, iOS */
+		url('../fonts/ds_moster.svg#ds_moster') format('svg'); /* Chrome < 4, Legacy iOS */
+}

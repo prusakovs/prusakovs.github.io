@@ -1,0 +1,158 @@
+<script>
+  $( function() {
+      setTimeout( hideBlackScreen, 2000);
+  });
+  
+  function hideBlackScreen () {
+      $( "#blackScreen" )
+	  .hide(
+	      "slide",
+	      { direction: "right" },
+	      4000,
+	      firstAnim
+	  )};
+
+
+    // Audio files are royalty-free from http://www.soundjay.com/typewriter-sounds.html.
+  var carriageReturnSound = new Howl({
+      src: ['assets/js/typewriter/typewriter-carriage-return.mp3']
+  });
+  var keystrokeSound = new Howl({
+      src: ['assets/js/typewriter/typewriter-keystroke.mp3']
+  });
+  var currentSound = null;
+  
+  var hOneText = [
+      "ПРУСАКОВ СЕРГЕЙ \n",
+
+  ];
+  var hSecText = [
+      "PRUSAKOV SERGEJ \n",
+  ];
+
+  
+  
+  function animate(typewriter, text, callbackfunc) {
+      sequence = [];
+      
+      for (var i in text) {
+	  sequence.push({
+	      text: text[i],
+	      delayAfter: 1500,
+	  });
+      }
+
+      
+      sequence.push({
+	  text: "",
+	  callback: callbackfunc
+      });
+	  
+      typewriter.playSequence(sequence);
+  }
+  
+  
+  function animate2(typewriter, text) {
+      sequence = [];
+      
+      for (var i in text) {
+	  sequence.push({
+	      text: text[i],
+	      delayAfter: 1500,
+	  });
+      }
+      
+      typewriter.playSequence(sequence);
+  }
+  
+  function playSound (character) {
+      var nextSound = null;
+      carriageReturnSound.pause();
+      keystrokeSound.pause();
+      
+      if (character == "\n") {
+          carriageReturnSound.currentTime = 0;
+          nextSound = carriageReturnSound;
+      } else if (character != " ") {
+          keystrokeSound.currentTime = 0;
+          nextSound = keystrokeSound;
+      }
+      
+      if (nextSound != null) {
+          if (currentSound != null) {
+              currentSound.stop();
+          }
+          currentSound = nextSound;
+          currentSound.play();
+      }
+  }
+  function firstAnim() {
+      var typewriter = new Typewriter($("#typewriter01"));
+      typewriter.setCaret("");
+      typewriter.setCaretPeriod(0);
+      typewriter.setDelay(500, 100);
+      typewriter.setCharacterCallback(playSound);
+      animate(typewriter, hOneText, function () {showDoubleScreenBottom()});
+  }
+  
+  function secondAnim() {
+      var typewriter = new Typewriter($("#typewriter02"));
+      $( "#preloader-doubleScreen-bottom" ).css("display", "flex");
+      typewriter.setCaret("");
+      typewriter.setCaretPeriod(0);
+      typewriter.setDelay(500, 100);
+      typewriter.setCharacterCallback(playSound);
+      animate(typewriter, hSecText, function() {showBiography()});
+  }
+
+  function showDoubleScreenBottom () {
+      $( "#preloader-doubleScreen-bottom" )
+	  .show(
+	      "slide",
+	      { direction: "right" },
+	      4000,
+	      secondAnim
+	  )};
+
+  function showBiography () {
+      setTimeout( hideDoubleScreen, 3000);
+  };
+  
+  function hideDoubleScreen () {
+      $( "#doubleScreen" )
+	  .hide(
+	      "fade",
+//	      { direction: "right" },
+	      //	      4000
+	      {},
+	      2000,
+	      fadeInBiography
+	  )
+  };
+
+  function fadeInBiography () {
+    $( "#biographyScreen" )
+	  .show(
+	      "fade",
+//	      { direction: "right" },
+	      //	      4000
+	      {},
+	      2000,
+	      closePreloader
+	  )
+  };  
+
+  function closePreloader () {
+      setTimeout(hidePreloader, 15000);
+  };
+
+  function hidePreloader () {
+      $( "#preloader" )
+	  .hide(
+	      "fade",
+	      {},
+	      2000
+	  )
+  };  
+  
+</script>  

@@ -27,10 +27,23 @@
 
   ];
   var hSecText = [
-      "PRUSAKOV SERGEJ \n",
+      "PRUSAKOV SERGEI \n",
   ];
 
-  
+  var hBiographyRu = [ "Родился 14 октября 1958 г. в г. Можайск Московской области. Школа, армия, институт. Образование - архитектор (архитектурный факультет МииЗ). Член МОО ВТОО «Союз художников России». Участник разных выставок, конкурсов.\n",
+		       "Детство выпало на 60-е годы. Музыка, одежда, автомобили, книжная графика того времени имеют свое неповторимое лицо.\n",
+		       "Такие мастера как Леонид Сойфертис, Анатолий Кокорин, Кукрыниксы, Генрих Вальк, Иван Семенов, американская династия Уайтов, великий датчанин Херлуф Биструп, непревзойденные советские мультфильмы. Всё это, вместе взятое, повлияло на меня, как на художника.\n",
+		       "Часто хочется в то время. Там было хорошо..."
+		     ];
+
+  var hBiographyEn = [ "Prusakov Sergey Alekseevich was born on 14 October, 1958, in Mozhaisk, Moscow Region. School. Army. Institute. His education is an architect (faculty of architecture of Moscow State University of Land Management). Member Of The Union Of Artists Of Russia. Participant of exhibitions.\n",
+
+		       "Childhood fell on the 60s. Music, fashion, cars, cinema, book graphics of that time have their own unique face.\n",
+
+		       "Such masters of the drawing as Leonid Soyfertis, Anatoliy Kokorin, Kukryniksy, Heinrich Valk, Ivan Semenov, White American dynasty, great Herluf Bidstrup, unsurpassed Soviet cartoons - all this together influenced me.\n",
+      
+		       "Often want to at that time. I was nice there..."
+  ];
   
   function animate(typewriter, text, callbackfunc) {
       sequence = [];
@@ -38,7 +51,7 @@
       for (var i in text) {
 	  sequence.push({
 	      text: text[i],
-	      delayAfter: 1500,
+	      delayAfter: 500,
 	  });
       }
 
@@ -51,19 +64,6 @@
       typewriter.playSequence(sequence);
   }
   
-  
-  function animate2(typewriter, text) {
-      sequence = [];
-      
-      for (var i in text) {
-	  sequence.push({
-	      text: text[i],
-	      delayAfter: 1500,
-	  });
-      }
-      
-      typewriter.playSequence(sequence);
-  }
   
   function playSound (character) {
       var nextSound = null;
@@ -90,7 +90,7 @@
       var typewriter = new Typewriter($("#typewriter01"));
       typewriter.setCaret("");
       typewriter.setCaretPeriod(0);
-      typewriter.setDelay(500, 100);
+      typewriter.setDelay(300, 100);
       typewriter.setCharacterCallback(playSound);
       animate(typewriter, hOneText, function () {showDoubleScreenBottom()});
   }
@@ -100,7 +100,7 @@
       $( "#preloader-doubleScreen-bottom" ).css("display", "flex");
       typewriter.setCaret("");
       typewriter.setCaretPeriod(0);
-      typewriter.setDelay(500, 100);
+      typewriter.setDelay(300, 100);
       typewriter.setCharacterCallback(playSound);
       animate(typewriter, hSecText, function() {showBiography()});
   }
@@ -122,26 +122,49 @@
       $( "#doubleScreen" )
 	  .hide(
 	      "fade",
-//	      { direction: "right" },
-	      //	      4000
 	      {},
 	      2000,
 	      fadeInBiography
 	  )
   };
 
+
+  
   function fadeInBiography () {
     $( "#biographyScreen" )
 	  .show(
 	      "fade",
-//	      { direction: "right" },
-	      //	      4000
 	      {},
 	      2000,
 	      closePreloader
 	  )
   };  
 
+  function printBiographyRu () {
+      var typewriter = new Typewriter($("#BiographyRU"));
+      typewriter.setCaret("");
+      typewriter.setCaretPeriod(0);
+      typewriter.setDelay(150, 75);
+      // typewriter.setCharacterCallback(playSound);
+      animate(typewriter, hBiographyRu, function () {closePreloader()});
+  };
+  
+  function printBiographyEn () {
+      var typewriter2 = new Typewriter($("#BiographyEN"));
+      typewriter2.setCaret("");
+      typewriter2.setCaretPeriod(0);
+      typewriter2.setDelay(150, 75);
+      // typewriter.setCharacterCallback(playSound);
+      animate(typewriter2, hBiographyEn);
+  };
+
+  function showBiographyRuEn () {
+      printBiographyRu();
+      printBiographyEn();
+  };
+
+
+  
   function closePreloader () {
       setTimeout(hidePreloader, 15000);
   };

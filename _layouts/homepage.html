@@ -1,0 +1,132 @@
+---
+layout: default
+---
+
+<head>
+  {% include head.html %}
+  <style>
+    nav {
+	background: #e0e0e0;
+	font-family: DS Moster;
+    }
+    .nav-tabs > li.active > a,
+    .nav-tabs > li.active > a:hover,
+    .nav-tabs > li.active > a:focus {
+	color: #555555;
+	cursor: default;
+	background-color: #e0e0e0;
+	border: 1px solid #ddd;
+	border-bottom-color: transparent;
+    }
+    div {
+	font-family: DS Moster;
+    }
+    footer {
+	font-family: DS Moster;
+    }
+    
+    ul.nav.nav-tabs {
+	text-align: right;
+    }
+    a {
+	color: black;
+	background-color #e0e0e0;
+    }
+    
+    .nav-tabs>li {
+	float:none;
+	display: inline-block;
+    }
+    .carousel-control.left, .carousel-control.right {
+	background: linear-gradient(to bottom, #e0e0e0 0%, #e0e0e0 50%, black 50%,black 100%)!important;
+	background-image:none;
+	outline: 0;
+	opacity: 1;
+    }
+    .carousel-inner .item{
+	height:85vh;
+	background-size:cover;
+	background-position: center center;
+    }
+    .carousel-inner > .item > img {
+	height:100%;
+	object-fit: scale-down;
+    }
+    
+    .preloader {
+	/*фиксированное позиционирование*/
+	position: fixed;
+	/* координаты положения */
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	/* фоновый цвет элемента */
+	background: #e0e0e0;
+	/* размещаем блок над всеми элементами на странице (это значение должно быть больше, чем у любого другого позиционированного элемента на странице) */
+	z-index: 1001;
+    }
+    
+    .preloader-blackScreen {
+	background: black;
+	/*фиксированное позиционирование*/
+	position: fixed;
+	/* координаты положения */
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+    }
+    
+    .preloader-doubleScreen {
+	background: #e0e0e0;
+	height: 100vh;
+	
+    }
+
+    .preloader-doubleScreen-top {
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	height: 50vh;
+    }
+
+    .preloader-doubleScreen-bottom {
+	background: black;
+	height: 50vh;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	display: none;
+    }
+
+    .preloader-biographyScreen {
+	background: #e0e0e0;
+	display: none;
+	
+    }
+
+    .typewriter01 {
+	margin: 0;
+    }
+    
+    .typewriter02 {
+	color: white;
+	background-color: black;
+	margin: 0;
+    }
+
+    #BiographyRU {
+	margin: 0;
+    }
+  </style>
+  
+  {% include headscripts.html %}
+  
+</head>
+
+<body>
+  {% include preloader.html %}
+  {{ content }}
+  {% include footer.html %}
+</body>

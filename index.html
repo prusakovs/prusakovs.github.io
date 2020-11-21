@@ -64,9 +64,6 @@ images:
  - image_path: /assets/img/gallery/DSC_0293.jpg
    caption: Охотничии байки
    copyright: © Прусаков С.А
- - image_path: /assets/img/gallery/DSC_0300.jpg
-   caption: Робинзон
-   copyright: © Прусаков С.А
  - image_path: /assets/img/gallery/DSC_0304.jpg
    caption: Итальянский мотив
    copyright: © Прусаков С.А
@@ -204,7 +201,7 @@ images:
 	  <div class="item active">
 	    <img src="{{ site.url }}{{ page.images.first.image_path }}" style="width:100%;">
 	    <div class="carousel-caption">
-	      <h3>{{ page.images.first.caption }}</h3>
+	      <p>{{ page.images.first.caption }}</p>
 	      <p>{{ page.images.first.copyright }}</p>
 	    </div>
 	  </div>
@@ -213,7 +210,7 @@ images:
 	  <div class="item">
 	    <img src="{{ site.url }}{{ images.image_path }}" style="width:100%;">
 	    <div class="carousel-caption">
-	      <h3>{{ images.caption }}</h3>
+	      <p>{{ images.caption }}</p>
 	      <p>{{ images.copyright }}</p>
 	    </div>
 	  </div>

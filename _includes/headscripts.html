@@ -45,13 +45,13 @@
 		       "Often want to return to that time. It was nice there..."
   ];
   
-  function animate(typewriter, text, callbackfunc) {
+  function animate(typewriter, text, delayTime,callbackfunc) {
       sequence = [];
       
       for (var i in text) {
 	  sequence.push({
 	      text: text[i],
-	      delayAfter: 500,
+	      delayAfter: delayTime,
 	  });
       }
 
@@ -92,7 +92,7 @@
       typewriter.setCaretPeriod(0);
       typewriter.setDelay(300, 100);
       typewriter.setCharacterCallback(playSound);
-      animate(typewriter, hOneText, function () {showDoubleScreenBottom()});
+      animate(typewriter, hOneText, 500, function () {showDoubleScreenBottom()});
   }
   
   function secondAnim() {
@@ -102,7 +102,7 @@
       typewriter.setCaretPeriod(0);
       typewriter.setDelay(300, 100);
       typewriter.setCharacterCallback(playSound);
-      animate(typewriter, hSecText, function() {showBiography()});
+      animate(typewriter, hSecText, 500, function() {showBiography()});
   }
 
   function showDoubleScreenBottom () {
@@ -144,18 +144,18 @@
       var typewriter = new Typewriter($("#BiographyRU"));
       typewriter.setCaret("");
       typewriter.setCaretPeriod(0);
-      typewriter.setDelay(150, 75);
+      typewriter.setDelay(50, 25);
       // typewriter.setCharacterCallback(playSound);
-      animate(typewriter, hBiographyRu, function () {closePreloader()} );
+      animate(typewriter, hBiographyRu, 50, function () {closePreloader()} );
   };
   
   function printBiographyEn () {
       var typewriter2 = new Typewriter($("#BiographyEN"));
       typewriter2.setCaret("");
       typewriter2.setCaretPeriod(0);
-      typewriter2.setDelay(150, 75);
+      typewriter2.setDelay(50, 25);
       // typewriter.setCharacterCallback(playSound);
-      animate(typewriter2, hBiographyEn);
+      animate(typewriter2, hBiographyEn, 50);
   };
 
   function showBiographyRuEn () {

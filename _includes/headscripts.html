@@ -32,7 +32,7 @@
 
   var hBiographyRu = [ "Родился 14 октября 1958 г. в г. Можайск Московской области. Школа, армия, институт. Образование - архитектор (архитектурный факультет МииЗ). Член МОО ВТОО «Союз художников России». Участник разных выставок, конкурсов.\n",
 		       "Детство выпало на 60-е годы. Музыка, одежда, автомобили, книжная графика того времени имеют свое неповторимое лицо.\n",
-		       "Такие мастера как Леонид Сойфертис, Анатолий Кокорин, Кукрыниксы, Генрих Вальк, Иван Семенов, американская династия Уайтов, великий датчанин Херлуф Биструп, непревзойденные советские мультфильмы. Всё это, вместе взятое, повлияло на меня, как на художника.\n",
+		       "Такие мастера как Леонид Сойфертис, Анатолий Кокорин, Кукрыниксы, Генрих Вальк, Иван Семенов, американская династия Уайтов, великий датчанин Херлуф Бидструп, непревзойденные советские мультфильмы. Всё это, вместе взятое, повлияло на меня, как на художника.\n",
 		       "Часто хочется в то время. Там было хорошо..."
 		     ];
 
@@ -42,7 +42,7 @@
 
 		       "Such masters of the drawing as Leonid Soyfertis, Anatoliy Kokorin, Kukryniksy, Heinrich Valk, Ivan Semenov, White American dynasty, great Herluf Bidstrup, unsurpassed Soviet cartoons - all this together influenced me.\n",
       
-		       "Often want to at that time. I was nice there..."
+		       "Often want to return to that time. It was nice there..."
   ];
   
   function animate(typewriter, text, callbackfunc) {
@@ -115,7 +115,7 @@
 	  )};
 
   function showBiography () {
-      setTimeout( hideDoubleScreen, 3000);
+      setTimeout( hideDoubleScreen, 500);
   };
   
   function hideDoubleScreen () {
@@ -136,7 +136,7 @@
 	      "fade",
 	      {},
 	      2000,
-	      closePreloader
+	      showBiographyRuEn
 	  )
   };  
 
@@ -146,7 +146,7 @@
       typewriter.setCaretPeriod(0);
       typewriter.setDelay(150, 75);
       // typewriter.setCharacterCallback(playSound);
-      animate(typewriter, hBiographyRu, function () {closePreloader()});
+      animate(typewriter, hBiographyRu, function () {closePreloader()} );
   };
   
   function printBiographyEn () {

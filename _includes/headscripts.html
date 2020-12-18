@@ -15,12 +15,20 @@
 
     // Audio files are royalty-free from http://www.soundjay.com/typewriter-sounds.html.
   var carriageReturnSound = new Howl({
-      src: ['assets/js/typewriter/typewriter-carriage-return.mp3']
+      src: ['assets/js/typewriter/typewriter-carriage-return.mp3'],
+      preload: true
   });
   var keystrokeSound = new Howl({
-      src: ['assets/js/typewriter/typewriter-keystroke.mp3']
+      src: ['assets/js/typewriter/typewriter-keystroke.mp3'],
+      preload: true
   });
   var currentSound = null;
+
+  var backgroundMusic = new Howl({
+      src: ['assets/audio/background.mp3', 'assets/audio/background.ogg'],
+      loop: true,
+      preload: true
+  });
   
   var hOneText = [
       "ПРУСАКОВ СЕРГЕЙ",
@@ -169,13 +177,19 @@
       setTimeout(hidePreloader, 15000);
   };
 
+  
   function hidePreloader () {
       $( "#preloader" )
 	  .hide(
 	      "fade",
 	      {},
-	      2000
+	      2000,
+	      startBM
 	  )
-  };  
+  };
+
+  function startBM () {
+      backgroundMusic.play();
+  };
   
 </script>  

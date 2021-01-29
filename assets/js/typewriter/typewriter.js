@@ -231,6 +231,7 @@ Typewriter.prototype._typeTextAtIndex = function (text, index) {
     }
 
     // Type the character.
+//    var character = text.charAt(index);
     var character = text.charAt(index);
 
     if (character === "\b") {

@@ -176,7 +176,18 @@
   
   function closePreloader () {
       setTimeout(hidePreloader, 15000);
-      jQuery("#gal01").nanogallery2();
+      jQuery("#gal01").nanogallery2({
+	  // NanoGallery settings
+	  // thumbnailHeight: '180', thumbnailWidth: 'auto',
+	  // galleryDisplayMode: 'pagination',                 // gallery pagination mode
+	  // galleryMaxRows: 3,
+          // thumbnailAlignment: 'fillWidth',
+	  viewerToolbar:    {
+              display:    true,
+              standard:   'label'
+	  },
+	  thumbnailLabel:   { valign: "middle", position: 'overImage', hideIcons: true, titleMultiLine: true },
+      });
   };
 
   

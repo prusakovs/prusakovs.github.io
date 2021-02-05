@@ -16,18 +16,20 @@
     // Audio files are royalty-free from http://www.soundjay.com/typewriter-sounds.html.
   var carriageReturnSound = new Howl({
       src: ['assets/js/typewriter/typewriter-carriage-return.mp3'],
-      preload: true
+      preload: true,
+      volume: 0.5
   });
   var keystrokeSound = new Howl({
       src: ['assets/js/typewriter/typewriter-keystroke.mp3'],
-      preload: true
+      preload: true,
+      volume: 0.5
   });
   var currentSound = null;
 
   var backgroundMusic = new Howl({
       src: ['assets/audio/background.mp3', 'assets/audio/background.ogg'],
       loop: true,
-      volume: 0.2,
+      volume: 0.1,
       preload: true
   });
   
@@ -175,7 +177,7 @@
 
   
   function closePreloader () {
-      setTimeout(hidePreloader, 15000);
+      setTimeout(hidePreloader, 5000);
       jQuery("#gal01").nanogallery2({
 	  // NanoGallery settings
 	  // thumbnailHeight: '180', thumbnailWidth: 'auto',
@@ -203,6 +205,7 @@
 
   function startBM () {
       backgroundMusic.play();
+      backgroundMusic.volume(0.03);
   };
   
 </script>  
